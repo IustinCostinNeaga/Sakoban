@@ -1,0 +1,167 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh3677ajerbap"]
+
+[ext_resource type="Script" path="res://LevelButton.gd" id="1_26h4y"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.5
+offset_top = -468.5
+offset_right = 370.5
+offset_bottom = -331.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "SELECT A LEVEL"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="LevelBox1" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(382, 300)
+layout_mode = 2
+
+[node name="Level1" type="Button" parent="GridContainer/LevelBox1"]
+custom_minimum_size = Vector2(192, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -38.5
+offset_right = 64.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 1"
+script = ExtResource("1_26h4y")
+lvl = "1"
+
+[node name="LevelBox2" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(382, 300)
+layout_mode = 2
+
+[node name="Level2" type="Button" parent="GridContainer/LevelBox2"]
+custom_minimum_size = Vector2(192, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -38.5
+offset_right = 64.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 2"
+script = ExtResource("1_26h4y")
+lvl = "2"
+
+[node name="LevelBox3" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(382, 300)
+layout_mode = 2
+
+[node name="Level3" type="Button" parent="GridContainer/LevelBox3"]
+custom_minimum_size = Vector2(192, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -38.5
+offset_right = 64.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 3"
+script = ExtResource("1_26h4y")
+lvl = "3"
+
+[node name="LevelBox4" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(382, 300)
+layout_mode = 2
+
+[node name="Level4" type="Button" parent="GridContainer/LevelBox4"]
+custom_minimum_size = Vector2(192, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -38.5
+offset_right = 64.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 4"
+script = ExtResource("1_26h4y")
+lvl = "4"
+
+[node name="LevelBox5" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(382, 300)
+layout_mode = 2
+
+[node name="Level5" type="Button" parent="GridContainer/LevelBox5"]
+custom_minimum_size = Vector2(192, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -38.5
+offset_right = 64.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 5"
+script = ExtResource("1_26h4y")
+lvl = "5"
+
+[connection signal="pressed" from="GridContainer/LevelBox1/Level1" to="GridContainer/LevelBox1/Level1" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/LevelBox2/Level2" to="GridContainer/LevelBox2/Level2" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/LevelBox3/Level3" to="GridContainer/LevelBox3/Level3" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/LevelBox4/Level4" to="GridContainer/LevelBox4/Level4" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/LevelBox5/Level5" to="GridContainer/LevelBox5/Level5" method="_on_pressed"]
