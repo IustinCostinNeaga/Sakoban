@@ -4,6 +4,7 @@ class_name LevelButton
 @export var lvl: String = "0"
 
 func _on_pressed():
-	print("change to level " + lvl)
-	#var level_scene = preload("res://levels/level" + lvl + ".tscn").instantiate()
-	#add_child(level_scene)
+	var path = "res://levels/level_" + lvl + ".tscn"
+	print("change to level " + lvl + ". Path is " + path)
+	get_tree().change_scene_to_file(path)
+
