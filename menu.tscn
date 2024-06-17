@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ea1vs7flskg4"]
 
-[ext_resource type="Script" path="res://Play.gd" id="1_wkvoi"]
-[ext_resource type="Script" path="res://Quit.gd" id="2_d3ecd"]
+[ext_resource type="Script" path="res://genericScripts/ChangeSceneButton.cs" id="1_8lq8d"]
+[ext_resource type="Script" path="res://genericScripts/Quit.cs" id="2_50aoe"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -35,7 +35,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "PLAY"
-script = ExtResource("1_wkvoi")
+script = ExtResource("1_8lq8d")
+_sceneName = "level_selector"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 1
@@ -52,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "QUIT"
-script = ExtResource("2_d3ecd")
+script = ExtResource("2_50aoe")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -70,5 +71,5 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "SAKOBAN"
 
-[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
-[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
+[connection signal="pressed" from="Play" to="Play" method="OnPressed"]
+[connection signal="pressed" from="Quit" to="Quit" method="OnPressed"]
