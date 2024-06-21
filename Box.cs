@@ -17,7 +17,7 @@ public partial class Box : Node2D
 	public bool move(Vector2I direction)
 	{
 		var nextPosition = tileMap.LocalToMap((Position)) + direction;
-		var nextTile = tileMap.GetCellTileData(0, nextPosition);
+		var nextTile = tileMap.GetCellTileData(1, nextPosition);
 		if (nextTile.GetCustomData("Walkable").AsBool())
 		{
 			foreach (var box in GetTree().GetNodesInGroup("Box").Cast<Box>())
@@ -32,6 +32,7 @@ public partial class Box : Node2D
 			Position = tileMap.MapToLocal(nextPosition);
 			if (nextTile.GetCustomData("Boxable").AsBool())
 			{
+				GD.Print("It's Boxable!");
 				EmitSignal(SignalName.HasEnteredTheGoal);
 			}
 			return true;

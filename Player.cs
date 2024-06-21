@@ -41,7 +41,7 @@ public partial class Player : Node2D
     private void MovePlayer(Vector2I direction)
     {
         var nextPosition = tilemap.LocalToMap((Position)) + direction;
-        var nextTile = tilemap.GetCellTileData(0, nextPosition);
+        var nextTile = tilemap.GetCellTileData(1, nextPosition);
         if (nextTile.GetCustomData("Walkable").AsBool())
         {
             foreach (var box in GetTree().GetNodesInGroup("Box").Cast<Box>())
