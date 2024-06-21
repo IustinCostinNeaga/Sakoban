@@ -1,86 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyddbmhbfaxjm"]
 
+[ext_resource type="Script" path="res://Box.cs" id="1_p24jf"]
 [ext_resource type="Texture2D" uid="uid://oyp1qhdorx1e" path="res://levels/tilemap.png" id="2_2ic1s"]
-
-[sub_resource type="GDScript" id="GDScript_6wy4l"]
-script/source = "extends Node2D
-
-@onready var tile_map = $\"../TileMap\"
-@export var isNotBox: bool
-var boxes: Array[Node]
-
-func _ready():
-	if(isNotBox):
-		print(\"This is the player\")
-		add_to_group(\"boxes\")
-	else:
-		print(\"This is a box\")
-	boxes = get_tree().get_nodes_in_group ( \"boxes\" )
-	print(boxes)
-	
-
-func _process(_delta):
-	if(isNotBox):
-		if(Input.is_action_just_pressed(\"Su\")): move(Vector2.UP)
-		elif(Input.is_action_just_pressed(\"Giu\")): move(Vector2.DOWN)
-		elif(Input.is_action_just_pressed(\"Destra\")): move(Vector2.RIGHT)
-		elif(Input.is_action_just_pressed(\"Sinistra\")): move(Vector2.LEFT)
-
-func can_move(direction: Vector2):
-	var current_postion = tile_map.local_to_map(global_position)
-	var next_position = Vector2(
-			current_postion.x + direction.x, 
-			current_postion.y + direction.y)
-		
-	var next_tile: TileData = tile_map.get_cell_tile_data(0, next_position)
-	
-	if(next_tile.get_custom_data(\"Walkable\") == false):
-		return false
-		
-	for box in boxes:
-		if(tile_map.local_to_map(box.global_position).x == next_position.x 
-		&& tile_map.local_to_map(box.global_position).y == next_position.y):
-			return false
-		
-	return true
-
-func move(direction: Vector2):
-	var current_postion = tile_map.local_to_map(global_position)
-	var next_position = Vector2(
-			current_postion.x + direction.x, 
-			current_postion.y + direction.y)
-		
-	var next_tile: TileData = tile_map.get_cell_tile_data(0, next_position)
-	
-	for box in boxes:
-		print(\"This one is:\")
-		print(tile_map.local_to_map(box.global_position).x)
-		print(next_position.x)
-		print(tile_map.local_to_map(box.global_position).y)
-		print(next_position.y)
-		if(tile_map.local_to_map(box.global_position).x == next_position.x 
-		&& tile_map.local_to_map(box.global_position).y == next_position.y):
-			print(box.can_move(direction))
-			if(box.can_move(direction)):
-				box.move(direction)
-			else:
-				return
-	
-	if(next_tile.get_custom_data(\"Walkable\") == false):
-		return
-		
-	global_position = tile_map.map_to_local(next_position)
-
-	return
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grs8t"]
 atlas = ExtResource("2_2ic1s")
 region = Rect2(0, 102, 16, 16)
 
-[node name="Box" type="Node2D"]
+[node name="Box" type="Node2D" groups=["Box"]]
 position = Vector2(72, 24)
-script = SubResource("GDScript_6wy4l")
+script = ExtResource("1_p24jf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_grs8t")
