@@ -79,6 +79,3 @@ layer_1/tile_data = PackedInt32Array(1572911, 2, 0, 1507372, 2, 0)
 
 [node name="Box1" parent="." instance=ExtResource("4_n642n")]
 position = Vector2(728, 391)
-
-[node name="Box2" parent="." instance=ExtResource("4_n642n")]
-position = Vector2(777, 391)

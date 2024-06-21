@@ -15,3 +15,4 @@ script = ExtResource("1_wrhdj")
 texture = SubResource("AtlasTexture_grs8t")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(3, 3)

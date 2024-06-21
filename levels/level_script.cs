@@ -36,7 +36,7 @@ public partial class level_script : Node
 
 		EmitSignal(SignalName.OnWin);
         win = WinScreenScene.Instantiate() as WinScreen;
-        win.Position = GetNode<Node2D>("Player").Position;
+        win.Position = GetNode<Node2D>("Player").Position - win.Size * 0.10f;
 		AddChild(win);
 
 	}
