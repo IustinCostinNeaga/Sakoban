@@ -29,9 +29,9 @@ public partial class level_script : Node
 		foreach (var box in boxes)
 		{
 			var pos = tileMap.LocalToMap(box.Position);
-			var tile = tileMap.GetCellTileData(1, pos);
+			var tile = tileMap.GetCellTileData(0, pos);
 
-			if (!(tile != null && tile.GetCustomData("Boxable").AsBool())) return;
+			if (!(tile.GetCustomData("Boxable").AsBool())) return;
 		}
 
 		EmitSignal(SignalName.OnWin);

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx0ijtwmh0by0"
-path="res://.godot/imported/Crate.png-5a2421e5413013e490fce9277f752122.ctex"
+uid="uid://bna0pcfxphgj4"
+path="res://.godot/imported/map_tiles.png-842d7c5adb820658d7127363e3fcf141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/Crate.png"
-dest_files=["res://.godot/imported/Crate.png-5a2421e5413013e490fce9277f752122.ctex"]
+source_file="res://levels/map_tiles.png"
+dest_files=["res://.godot/imported/map_tiles.png-842d7c5adb820658d7127363e3fcf141.ctex"]
 
 [params]
 

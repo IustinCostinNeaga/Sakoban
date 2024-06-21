@@ -18,7 +18,6 @@ public partial class Box : Node2D
 	{
 		var nextPosition = tileMap.LocalToMap((Position)) + direction;
 		var nextTile = tileMap.GetCellTileData(0, nextPosition);
-		var boxableTile = tileMap.GetCellTileData(1, nextPosition);
 		if (nextTile.GetCustomData("Walkable").AsBool())
 		{
 			foreach (var box in GetTree().GetNodesInGroup("Box").Cast<Box>())
@@ -31,7 +30,7 @@ public partial class Box : Node2D
 			}
 			
 			Position = tileMap.MapToLocal(nextPosition);
-			if (boxableTile != null && boxableTile.GetCustomData("Boxable").AsBool())
+			if (nextTile.GetCustomData("Boxable").AsBool())
 			{
 				EmitSignal(SignalName.HasEnteredTheGoal);
 			}
